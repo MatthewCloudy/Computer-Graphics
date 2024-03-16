@@ -1,0 +1,13 @@
+Grafika komputerowa 1 - Projekt 1
+Mateusz Chmurzyński
+304021
+
+Po kilkudziesięciu godzinach pracy mam przyjemność zaprezentować mój edytor wielokątów.
+
+Obsługa edytora jest intuicyjna. Po prawej stronie mamy menu i tam wybieramy opcję, która nas interesuje. Wszelkie operacje wykonujemy kliknięciem lewego przycisku myszy a w przypadku przesuwania - naciskamy lewy przycisk myszy i poruszamy myszką.
+
+Implementacja offsetu polega na wyliczeniu odpowiedniego wektora normalnego o zadanej długości. W pewnym momencie przy wyliczaniu współrzędnej wektora musimy wyliczyć ją z kwadratu. Daje to rozwiązanie ujemne i dodatnie i dlatego offset czasami jest wewnątrz wielokąta a czasem na zewnątrz, zależy to od tego jak zaczynamy rysować wierzchołki, zakładamy że rysujemy wielokąt od jego dolnej lewej części i wtedy offset jest na zewnątrz.
+
+Przy implementacji przesuwania krawędzi porusza się najwyżej ruszana krawędź, chyba że nałożone są restrykcje na sąsiednie krawędzi, wtedy odpowiednio przesuwają się punkty z sąsiadujących krawędzi. Wygląda to dość naturalnie (pierwsze moje podejście, zakomentowane, nie pozwalało na ruch wierzchołków przyległych krawędzi).
+Podobnie przy wierzchołkach, jeżeli nie ma restrycji na przyległe krawędzie, porusza się tylko zaznaczony wierzchołek, w przeciwnym przypadku sąsiadujące wierzchołki poruszają się odpowiednio, żeby restrykcje zostały zachowane.
+
